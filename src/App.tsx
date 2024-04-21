@@ -1,35 +1,14 @@
-import {Button, Placeholder} from "@xelene/tgui";
-import {useTonConnectUI, useTonWallet} from "@tonconnect/ui-react";
-import {generatePayload, getAddressAndStateInit} from "./nft.ts";
+import {AppRoot, Placeholder} from "@xelene/tgui";
+import { TonConnectUIProvider } from "@tonconnect/ui-react";
+import {Header} from "./Header.tsx";
+import {Content} from "./Content.tsx";
 
-export const Content = () => {
-    const wallet = useTonWallet();
-    const [tc] = useTonConnectUI();
-    const onSend = () => {
-        if (!wallet) {
-            return tc.openModal();
-        }
-
-        const payload = generatePayload(wallet!.account.address);
-        const { address, stateInit } = getAddressAndStateInit(wallet!.account.address);
-
-        tc.sendTransaction({
-            validUntil: Math.floor(Date.now() / 1000) + 60 * 5,
-            messages: [{
-                address,
-                amount: '100000000',
-                payload,
-                stateInit
-            }]
-        })
-    }
-    return <Placeholder
-    >
-        <img
-                    alt="Scanner"
-                    src="https://raw.githubusercontent.com/mir-one/sbt-scanner/main/public/scanner.gif"
-                    style={{ display: 'block', width: '144px', height: '144px' }}
-                />
-        <Button onClick={onSend}>{wallet ? 'Mint free NFT' : 'Connect wallet to mint free NFT'}</Button>
-    </Placeholder>
+function App() {
+    return <TonConnectUIProvider manifestUrl="https://siandreev.github.io/web3-hk-sample/tonconnect-manifest.json">
+        <AppRoot>
+            <Header />
+        <Content />
+    </AppRoot>
+    </TonConnectUIProvider>
 }
+export default App
