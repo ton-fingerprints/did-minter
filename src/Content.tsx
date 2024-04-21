@@ -6,6 +6,10 @@ export const Content = () => {
     const wallet = useTonWallet();
     const [tc] = useTonConnectUI();
     const onSend = () => {
+        if (!wallet) {
+            return tc.openModal();
+        }
+
         const payload = generatePayload(wallet!.account.address);
         const { address, stateInit } = getAddressAndStateInit(wallet!.account.address);
 
