@@ -30,6 +30,6 @@ export const Content = () => {
             src="https://raw.githubusercontent.com/mir-one/sbt-scanner/main/public/scanner.gif"
             style={{ display: 'block', width: '144px', height: '144px' }}
         />
-        <Button onClick={onSend}>Mint free NFT</Button>
+        <Button onClick={onSend}>Mint NFT Scanner</Button>
     </Placeholder>
 }

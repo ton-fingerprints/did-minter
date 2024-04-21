@@ -4,7 +4,7 @@ import {Header} from "./Header.tsx";
 import {Content} from "./Content.tsx";
 
 function App() {
-    return <TonConnectUIProvider manifestUrl="https://siandreev.github.io/web3-hk-sample/tonconnect-manifest.json">
+    return <TonConnectUIProvider manifestUrl="https://raw.githubusercontent.com/mir-one/sbt-scanner/main/public/tonconnect-manifest.json">
         <AppRoot>
             <Header />
         <Content />
