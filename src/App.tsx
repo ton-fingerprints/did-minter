@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {Button, Placeholder} from "@xelene/tgui";
+import {useTonConnectUI, useTonWallet} from "@tonconnect/ui-react";
+import {generatePayload, getAddressAndStateInit} from "./nft.ts";
 
-function App() {
-  const [count, setCount] = useState(0)
+export const Content = () => {
+    const wallet = useTonWallet();
+    const [tc] = useTonConnectUI();
+    const onSend = () => {
+        if (!wallet) {
+            return tc.openModal();
+        }
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+        const payload = generatePayload(wallet!.account.address);
+        const { address, stateInit } = getAddressAndStateInit(wallet!.account.address);
+
+        tc.sendTransaction({
+            validUntil: Math.floor(Date.now() / 1000) + 60 * 5,
+            messages: [{
+                address,
+                amount: '100000000',
+                payload,
+                stateInit
+            }]
+        })
+    }
+    return <Placeholder
+    >
+        <img
+                    alt="Scanner"
+                    src="https://raw.githubusercontent.com/mir-one/sbt-scanner/main/public/scanner.gif"
+                    style={{ display: 'block', width: '144px', height: '144px' }}
+                />
+        <Button onClick={onSend}>{wallet ? 'Mint free NFT' : 'Connect wallet to mint free NFT'}</Button>
+    </Placeholder>
 }
-
-export default App
