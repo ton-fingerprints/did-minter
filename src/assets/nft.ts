@@ -8,7 +8,7 @@ import {
 } from "ton";
 
 const nftUri =
-  "https://raw.githubusercontent.com/mir-one/sbt-scanner/main/public/nft.json";
+  "https://raw.githubusercontent.com/ton-fingerprints/did-minter/main/public/nft.json";
 
 function bufferToChunks(buff: Buffer, chunkSize: number) {
   const chunks: Buffer[] = [];
