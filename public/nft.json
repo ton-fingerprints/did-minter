@@ -1,11 +1,6 @@
 {
-    "description": "VABADU",
-    "image": "https://raw.githubusercontent.com/mir-one/sbt-scanner/main/public/passport-with-map-VB.png",
-    "name": "VABADU",
-    "buttons": [
-        {
-            "label": "Open Vabadu",
-            "uri": "https://getgems.io/vabadu"
-        }
-    ]
+    "description": "Web 3 scanner",
+    "external_url": "https://getgems.io/collection/EQAWqBJYfcWi2MXJiTJCRJG-UkqVJjFcV24AhOb2P6auEPOf",
+    "image": "https://raw.githubusercontent.com/TheGateway-ton/metadata/main/assets/tg_bot_pic.png",
+    "name": "Fingerprint Scanner"
 }
