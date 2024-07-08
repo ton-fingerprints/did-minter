@@ -27,7 +27,7 @@ export const Content = () => {
     >
         <img
             alt="Scanner"
-            src="https://raw.githubusercontent.com/mir-one/sbt-scanner/main/public/scanner.gif"
+            src="https://raw.githubusercontent.com/ton-fingerprints/did-minter/main/public/scanner.gif"
             style={{ display: 'block', width: '144px', height: '144px' }}
         />
         <Button onClick={onSend}>Mint NFT Scanner</Button>

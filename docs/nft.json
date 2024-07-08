@@ -1,9 +1,9 @@
 {
     "description": "Web 3 scanner",
     "external_url": "https://fingerprints.space",
-    "image": "https://raw.githubusercontent.com/TheGateway-ton/metadata/main/assets/tg_bot_pic.png",
+    "image": "https://raw.githubusercontent.com/ton-fingerprints/did-minter/main/public/scanner.gif",
     "name": "Fingerprint Scanner",
-    "scanner_score": "0001",
+    "fingerprint_score": "0001",
     "activity_type": "Partners",
     "buttons": [
         {
