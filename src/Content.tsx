@@ -1,4 +1,4 @@
-import {Button, Placeholder} from "@xelene/tgui";
+import {Button, Placeholder} from "@telegram-apps/telegram-ui";
 import {useTonConnectUI, useTonWallet} from "@tonconnect/ui-react";
 import {generatePayload, getAddressAndStateInit} from "./nft.ts";
 

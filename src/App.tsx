@@ -1,4 +1,4 @@
-import {AppRoot} from "@xelene/tgui";
+import {AppRoot} from "@telegram-apps/telegram-ui";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import {Header} from "./Header.tsx";
 import {Content} from "./Content.tsx";
